@@ -18,6 +18,19 @@ public class expresionesRegulares {
         return mat.matches();
     }
 
+    public boolean validarDelimitadores(String dato){
+        Pattern pat = Pattern.compile("^(\\(|\\]|\\[|\\}|\\{|\\)|;)$");
+        Matcher mat = pat.matcher(dato);
+
+        return mat.matches();
+    }
+
+    public boolean validarSignos(String dato){
+        Pattern pat = Pattern.compile("^(\\.|\"|,)$");
+        Matcher mat = pat.matcher(dato);
+
+        return mat.matches();
+    }
 
     public boolean validarNumeros(String dato){
         Pattern pat = Pattern.compile("[0-9]+");
