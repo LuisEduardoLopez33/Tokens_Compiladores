@@ -19,17 +19,6 @@ public class expresionesRegulares {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
     public boolean validarNumeros(String dato){
         Pattern pat = Pattern.compile("[0-9]+");
         Matcher mat = pat.matcher(dato);

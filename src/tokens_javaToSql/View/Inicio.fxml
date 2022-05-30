@@ -9,6 +9,6 @@
    <children>
       <TextArea fx:id="entrada" layoutX="20.0" layoutY="43.0" prefHeight="232.0" prefWidth="542.0" />
       <Label fx:id="salida" layoutX="420.0" layoutY="307.0" text="Label" />
-      <Button layoutX="245.0" layoutY="305.0" lineSpacing="5.0" mnemonicParsing="false" onMouseClicked="#iniciar" prefHeight="38.0" prefWidth="78.0" text="Aceptar" />
+      <Button layoutX="245.0" layoutY="305.0" lineSpacing="5.0" mnemonicParsing="false" onDragEntered="#iniciar" onMouseClicked="#iniciar" prefHeight="38.0" prefWidth="78.0" text="Aceptar" />
    </children>
 </AnchorPane>

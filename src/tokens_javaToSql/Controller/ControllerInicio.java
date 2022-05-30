@@ -10,8 +10,13 @@ import tokens_javaToSql.Model.expresionesRegulares;
 import java.util.StringTokenizer;
 
 public class ControllerInicio {
-
+    expresionesRegulares expresiones = new expresionesRegulares();
     ObservableList<String> entrad = FXCollections.observableArrayList();
+    ObservableList<String> reservados = FXCollections.observableArrayList();
+    ObservableList<String> delimitadores = FXCollections.observableArrayList();
+    ObservableList<String> signos = FXCollections.observableArrayList();
+    ObservableList<String> numeros = FXCollections.observableArrayList();
+    ObservableList<String> palabra = FXCollections.observableArrayList();
 
     @FXML
     private TextArea entrada;
@@ -21,22 +26,61 @@ public class ControllerInicio {
 
     @FXML
     void iniciar(MouseEvent event) {
-        expresionesRegulares expresiones = new expresionesRegulares();
 
         //guardando al array
 
 
         StringTokenizer st = new StringTokenizer(entrada.getText());
             while (st.hasMoreTokens()) {
-            System.out.println(st.nextToken());
-            //entrad.add(st.nextToken());
+            //System.out.println(st.nextToken());
+            entrad.add(st.nextToken());
         }
-            if(expresiones.validarPalabrasRecervadas(entrada.getText())){
-                System.out.println("si es valido pa");
-            }
-            else{
-                System.out.println("yo creo que no se va a poder mi pa");
-            }
+//        System.out.println(entrad);
+
+        for (int i = 0; i < entrad.size(); i++){
+            comprobarReservados(entrad.get(i));
+        }
+        System.out.println(reservados);
+    }
+
+    void comprobarPalabras(String dato){
+        if(expresiones.validarPalabrasRecervadas(dato)){
+            System.out.println("si es valido pa");
+            palabra.add(dato);
+            entrad.remove(dato);
+        }
+    }
+
+    void comprobarDelimitadores(String dato){
+        if(expresiones.validarPalabrasRecervadas(dato)){
+            System.out.println("si es valido pa");
+            delimitadores.add(dato);
+            entrad.remove(dato);
+        }
+    }
+
+    void comprobarSignos(String dato){
+        if(expresiones.validarPalabrasRecervadas(dato)){
+            System.out.println("si es valido pa");
+            signos.add(dato);
+            entrad.remove(dato);
+        }
+    }
+
+    void comprobarNumeros(String dato){
+        if(expresiones.validarPalabrasRecervadas(dato)){
+            System.out.println("si es valido pa");
+            numeros.add(dato);
+            entrad.remove(dato);
+        }
+    }
+
+    void comprobarReservados(String dato){
+        if(expresiones.validarPalabrasRecervadas(dato)){
+            System.out.println("si es valido pa");
+            reservados.add(dato);
+            entrad.remove(dato);
+        }
     }
 
 }
