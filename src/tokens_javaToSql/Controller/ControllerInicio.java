@@ -30,6 +30,13 @@ public class ControllerInicio {
 
     @FXML
     void iniciar(MouseEvent event) {
+        entrad.clear();
+        reservados.clear();
+        delimitadores.clear();
+        signos.clear();
+        numeros.clear();
+        palabra.clear();
+        incorrectos.clear();
 
         //guardando al array
 
