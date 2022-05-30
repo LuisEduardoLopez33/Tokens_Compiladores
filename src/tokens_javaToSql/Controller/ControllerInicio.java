@@ -38,9 +38,10 @@ public class ControllerInicio {
 //        System.out.println(entrad);
 
         for (int i = 0; i < entrad.size(); i++){
-            comprobarReservados(entrad.get(i));
+            if (!comprobarReservados(entrad.get(i))){
+                comprobarPalabras(entrad.get(i));
+            }
             comprobarDelimitadores(entrad.get(i));
-            comprobarPalabras(entrad.get(i));
             comprobarSignos(entrad.get(i));
             comprobarNumeros(entrad.get(i));
         }
@@ -53,37 +54,35 @@ public class ControllerInicio {
 
     void comprobarPalabras(String dato){
         if(expresiones.validarLetras(dato)){
-            System.out.println("si es valido pa");
             palabra.add(dato);
         }
     }
 
     void comprobarDelimitadores(String dato){
         if(expresiones.validarDelimitadores(dato)){
-            System.out.println("si es valido pa");
             delimitadores.add(dato);
         }
     }
 
     void comprobarSignos(String dato){
         if(expresiones.validarSignos(dato)){
-            System.out.println("si es valido pa");
             signos.add(dato);
         }
     }
 
     void comprobarNumeros(String dato){
         if(expresiones.validarNumeros(dato)){
-            System.out.println("si es valido pa");
             numeros.add(dato);
         }
     }
 
-    void comprobarReservados(String dato){
+    boolean comprobarReservados(String dato){
+        boolean aux = false;
         if(expresiones.validarPalabrasRecervadas(dato)){
-            System.out.println("si es valido pa");
             reservados.add(dato);
+            aux = true;
         }
+        return aux;
     }
 
 }
