@@ -17,6 +17,7 @@ public class ControllerInicio {
     ObservableList<String> signos = FXCollections.observableArrayList();
     ObservableList<String> numeros = FXCollections.observableArrayList();
     ObservableList<String> palabra = FXCollections.observableArrayList();
+    ObservableList<String> incorrectos = FXCollections.observableArrayList();
 
     @FXML
     private TextArea entrada;
@@ -38,51 +39,61 @@ public class ControllerInicio {
 //        System.out.println(entrad);
 
         for (int i = 0; i < entrad.size(); i++){
-            if (!comprobarReservados(entrad.get(i))){
-                comprobarPalabras(entrad.get(i));
-            }
-            comprobarDelimitadores(entrad.get(i));
-            comprobarSignos(entrad.get(i));
-            comprobarNumeros(entrad.get(i));
+            comprobarReservados(entrad.get(i));
         }
         System.out.println(reservados);
         System.out.println(delimitadores);
         System.out.println(palabra);
         System.out.println(signos);
         System.out.println(numeros);
+        System.out.println(incorrectos);
     }
+    void comprobarReservados(String dato){
+        boolean aux = false;
+        if(expresiones.validarPalabrasRecervadas(dato)){
+            reservados.add(dato);
+            aux = true;
+        }else {
+            comprobarPalabras(dato);
+        }
 
+    }
     void comprobarPalabras(String dato){
         if(expresiones.validarLetras(dato)){
             palabra.add(dato);
+        }else{
+            comprobarDelimitadores(dato);
         }
     }
 
     void comprobarDelimitadores(String dato){
         if(expresiones.validarDelimitadores(dato)){
             delimitadores.add(dato);
+        }else{
+            comprobarSignos(dato);
         }
     }
 
     void comprobarSignos(String dato){
         if(expresiones.validarSignos(dato)){
             signos.add(dato);
+        }else{
+            comprobarNumeros(dato);
         }
     }
 
     void comprobarNumeros(String dato){
         if(expresiones.validarNumeros(dato)){
             numeros.add(dato);
+        }else{
+            datoIncorreto(dato);
         }
     }
 
-    boolean comprobarReservados(String dato){
-        boolean aux = false;
-        if(expresiones.validarPalabrasRecervadas(dato)){
-            reservados.add(dato);
-            aux = true;
-        }
-        return aux;
+    void datoIncorreto(String dato){
+        incorrectos.add(dato);
     }
+
+
 
 }

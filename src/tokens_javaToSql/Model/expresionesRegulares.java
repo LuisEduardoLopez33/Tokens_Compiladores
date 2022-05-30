@@ -26,7 +26,7 @@ public class expresionesRegulares {
     }
 
     public boolean validarSignos(String dato){
-        Pattern pat = Pattern.compile("^(\\.|\"|,)$");
+        Pattern pat = Pattern.compile("^(\\.|\"|,|=)$");
         Matcher mat = pat.matcher(dato);
 
         return mat.matches();
