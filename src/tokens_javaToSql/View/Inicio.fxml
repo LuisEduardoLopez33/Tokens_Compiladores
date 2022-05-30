@@ -4,11 +4,102 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tokens_javaToSql.Controller.ControllerInicio">
+<AnchorPane prefHeight="642.0" prefWidth="830.0" style="-fx-background-color: #D6D0D2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tokens_javaToSql.Controller.ControllerInicio">
    <children>
-      <TextArea fx:id="entrada" layoutX="20.0" layoutY="43.0" prefHeight="232.0" prefWidth="542.0" />
-      <Label fx:id="salida" layoutX="420.0" layoutY="307.0" text="Label" />
-      <Button layoutX="245.0" layoutY="305.0" lineSpacing="5.0" mnemonicParsing="false" onDragEntered="#iniciar" onMouseClicked="#iniciar" prefHeight="38.0" prefWidth="78.0" text="Aceptar" />
+      <TextArea fx:id="entrada" layoutX="19.0" layoutY="77.0" prefHeight="450.0" prefWidth="355.0" />
+      <Label layoutX="564.0" layoutY="447.0" text="Resultados" textFill="#324e65">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button layoutX="157.0" layoutY="561.0" lineSpacing="5.0" mnemonicParsing="false" onDragEntered="#iniciar" onMouseClicked="#iniciar" prefHeight="38.0" prefWidth="78.0" style="-fx-background-color: #D8C149;" text="Analizar">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <GridPane gridLinesVisible="true" layoutX="390.0" layoutY="81.0" prefHeight="345.0" prefWidth="415.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="112.79999999999998" minHeight="10.0" prefHeight="62.799993896484374" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="64.39999999999999" minHeight="0.0" prefHeight="50.00000610351562" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #9998CE;" text="             Tockens" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label prefHeight="84.0" prefWidth="208.0" style="-fx-background-color: #FFFFFF;" text="         Palabras Reservadas" GridPane.rowIndex="1">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label prefHeight="64.0" prefWidth="208.0" style="-fx-background-color: #FFFFFF;" text="                  Palabras" GridPane.rowIndex="2">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label prefHeight="51.0" prefWidth="206.0" style="-fx-background-color: #FFFFFF;" text="                  Numeros" GridPane.rowIndex="3">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label prefHeight="48.0" prefWidth="208.0" style="-fx-background-color: #9998CE;" text="            Valores" textFill="WHITE" GridPane.columnIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label prefHeight="46.0" prefWidth="208.0" style="-fx-background-color: #FFFFFF;" text="              Delimitadores" GridPane.rowIndex="4">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label prefHeight="57.0" prefWidth="208.0" style="-fx-background-color: #FFFFFF;" text="                   Signos" GridPane.rowIndex="5">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label prefHeight="78.0" prefWidth="210.0" style="-fx-background-color: #FFFFFF;" text=" import, public, main, &#10; class, new, String, void,&#10; args, this, private, super, int" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label prefHeight="66.0" prefWidth="208.0" style="-fx-background-color: #FFFFFF;" text=" a..z, A..Z" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label prefHeight="48.0" prefWidth="208.0" style="-fx-background-color: #FFFFFF;" text=" 0..9" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label prefHeight="49.0" prefWidth="208.0" style="-fx-background-color: #FFFFFF;" text=" [, ], (, ), {, }, ;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label prefHeight="49.0" prefWidth="208.0" style="-fx-background-color: #FFFFFF;" text=" &quot;, &quot;, ., ," GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <Label layoutX="244.0" layoutY="14.0" text="ANALISADOR LEXICO" textFill="#324e65">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="result" layoutX="396.0" layoutY="474.0" prefHeight="138.0" prefWidth="402.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextArea>
    </children>
 </AnchorPane>

@@ -26,6 +26,9 @@ public class ControllerInicio {
     private Label salida;
 
     @FXML
+    private TextArea result;
+
+    @FXML
     void iniciar(MouseEvent event) {
 
         //guardando al array
@@ -47,6 +50,8 @@ public class ControllerInicio {
         System.out.println(signos);
         System.out.println(numeros);
         System.out.println(incorrectos);
+
+        resultados();
     }
     void comprobarReservados(String dato){
         boolean aux = false;
@@ -94,6 +99,15 @@ public class ControllerInicio {
         incorrectos.add(dato);
     }
 
+    void resultados(){
+        result.setText("Palabras Reservadas --> "+ reservados + "\n" + "Palabras --> " + palabra + "\n"
+                + "Numeros --> " + numeros + "\n" + "Delimitadores --> "
+                + delimitadores + "\n" + "Signos --> " + signos + "\n" + "Erroneos --> " + incorrectos);
+//        result.setText("Palabras --> " + palabra);
+//        result.setText("Numeros --> " + numeros);
+//        result.setText("Delimitadores --> " + delimitadores);
+//        result.setText("Signos --> " + signos);
+    }
 
 
 }
