@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
+import tokens_javaToSql.Model.expresionesRegulares;
+import java.util.StringTokenizer;
 
 public class ControllerInicio {
 
@@ -19,14 +21,22 @@ public class ControllerInicio {
 
     @FXML
     void iniciar(MouseEvent event) {
-        String[] sa = entrada.getText().split(" ");
+        expresionesRegulares expresiones = new expresionesRegulares();
 
         //guardando al array
-        for (int i = sa.length-1; i>=0; i--){
-            entrad.add(sa[i]);
-        }
 
-        System.out.println(entrad);
+
+        StringTokenizer st = new StringTokenizer(entrada.getText());
+            while (st.hasMoreTokens()) {
+            System.out.println(st.nextToken());
+            //entrad.add(st.nextToken());
+        }
+            if(expresiones.validarPalabrasRecervadas(entrada.getText())){
+                System.out.println("si es valido pa");
+            }
+            else{
+                System.out.println("yo creo que no se va a poder mi pa");
+            }
     }
 
 }
