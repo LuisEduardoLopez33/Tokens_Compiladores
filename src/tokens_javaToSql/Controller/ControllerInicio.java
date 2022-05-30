@@ -51,12 +51,12 @@ public class ControllerInicio {
         for (int i = 0; i < entrad.size(); i++){
             comprobarReservados(entrad.get(i));
         }
-        System.out.println(reservados);
-        System.out.println(delimitadores);
-        System.out.println(palabra);
-        System.out.println(signos);
-        System.out.println(numeros);
-        System.out.println(incorrectos);
+//        System.out.println(reservados);
+//        System.out.println(delimitadores);
+//        System.out.println(palabra);
+//        System.out.println(signos);
+//        System.out.println(numeros);
+//        System.out.println(incorrectos);
 
         resultados();
     }

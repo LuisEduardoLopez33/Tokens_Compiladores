@@ -11,7 +11,10 @@
 
 <AnchorPane prefHeight="642.0" prefWidth="830.0" style="-fx-background-color: #D6D0D2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tokens_javaToSql.Controller.ControllerInicio">
    <children>
-      <TextArea fx:id="entrada" layoutX="19.0" layoutY="77.0" prefHeight="450.0" prefWidth="355.0" />
+      <TextArea fx:id="entrada" layoutX="19.0" layoutY="77.0" prefHeight="450.0" prefWidth="355.0">
+         <font>
+            <Font size="16.0" />
+         </font></TextArea>
       <Label layoutX="564.0" layoutY="447.0" text="Resultados" textFill="#324e65">
          <font>
             <Font size="14.0" />
@@ -92,14 +95,14 @@
             </Label>
          </children>
       </GridPane>
-      <Label layoutX="244.0" layoutY="14.0" text="ANALISADOR LEXICO" textFill="#324e65">
+      <Label layoutX="244.0" layoutY="14.0" text="ANALIZADOR LÉXICO" textFill="#324e65">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <TextArea fx:id="result" layoutX="396.0" layoutY="474.0" prefHeight="138.0" prefWidth="402.0">
+      <TextArea fx:id="result" editable="false" layoutX="396.0" layoutY="467.0" prefHeight="166.0" prefWidth="402.0">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="16.0" />
          </font></TextArea>
    </children>
 </AnchorPane>

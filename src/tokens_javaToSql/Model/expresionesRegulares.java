@@ -12,7 +12,7 @@ public class expresionesRegulares {
     }
 
     public boolean validarPalabrasRecervadas(String dato){
-        Pattern pat = Pattern.compile("^(import|public|main|class|new|String|void|args|this|private|super|int)$");
+        Pattern pat = Pattern.compile("^(import|public|main|class|new|String|void|args|this|private|super|int|float)$");
         Matcher mat = pat.matcher(dato);
 
         return mat.matches();
